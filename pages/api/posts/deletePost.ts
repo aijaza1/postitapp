@@ -24,7 +24,7 @@ export default async function handler(
             })
             res.status(200).json(result)
         } catch (err) {
-            res.status(403).json({ err: 'An Error has occured while deleting your posts' })
+            res.status(403).json({ err: 'An Error has occured while deleting your posts.' })
         }
     }
 }
