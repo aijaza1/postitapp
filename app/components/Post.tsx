@@ -2,11 +2,19 @@
 import Image from "next/image"
 import Link from 'next/link'
 import placeholderImage from '../images/placeholder.png'
+import { PostType } from '../types/Posts'
 
 
-
-export default function Post({ avatar, name, postTitle, id, comments}) {
-    const imageUrl = avatar || placeholderImage;
+interface PostProps {
+    avatar: string;
+    name: string;
+    postTitle: string;
+    id: string;
+    comments: PostType['Comment']; 
+  }
+  
+  export default function Post({ avatar, name, postTitle, id, comments }: PostProps) {
+    const imageUrl = avatar ?? placeholderImage;
 
     return (
       <div className="bg-white my-8 p-8 rounded-lg">
