@@ -1,17 +1,20 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Nobile } from 'next/font/google'
 import Nav from './Nav'
 import AuthContext from "./auth/AuthContext"
 import QueryWrapper from './QueryWrapper'
 
-const inter = Inter({ subsets: ['latin'] })
+const nobile = Nobile({ subsets: ['latin'], weight: ['400'] })
 
 
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`mx-4 md:mx-48 xl:mx-96 ${inter.variable} bg-gray-200`}>
+      <head>
+        <link rel="shortcut icon" href="/icon.png" />
+      </head>
+      <body className={`mx-4 md:mx-48 xl:mx-96 ${nobile.variable} bg-[#e9e2fb]`}>
         <QueryWrapper>
           <AuthContext>
             <Nav />

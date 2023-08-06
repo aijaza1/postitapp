@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Login from "./auth/Login"
 import Logged from "./auth/Logged"
+import Image from 'next/image'
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../pages/api/auth/[...nextauth]"
 
@@ -10,8 +11,9 @@ export default async function Nav() {
     
     return(
         <nav className="flex justify-between items-center py-8">
+            
             <Link href={"/"}>
-                <h1 className="font-bold text-lg">Send it.</h1>
+                <Image src="/postpalnav.png" alt="/" width="200" height="80" />
             </Link>
 
 

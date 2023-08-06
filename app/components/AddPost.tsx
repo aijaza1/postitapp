@@ -67,7 +67,7 @@ export default function CreatePost() {
                 
                 <button
                 disabled={isDisabled}
-                className="text-sm bg-teal-600 text-white py-2 px-6 rounded-xl disabled:opacity-25"
+                className="text-sm bg-[#5C4B99] text-white py-2 px-6 rounded-xl disabled:opacity-25"
                 type="submit"
                 >
                     Create a post
