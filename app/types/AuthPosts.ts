@@ -5,6 +5,17 @@ export type AuthPosts = {
     image: string
     name: string
     Post: {
+        hearts: { 
+            id: string;
+            postId: string; 
+            userId: string; 
+            heartEmail: string; 
+            user: { 
+                email: string;
+                id: string; 
+                image: string; 
+                name: string } 
+            }[]
         createdAt: string
         id: string
         title: string

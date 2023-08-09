@@ -16,6 +16,7 @@ export default async function handler(
                 },
                 include: {
                     user: true,
+                    hearts: true,
                     Comment: {
                         orderBy: {
                             createdAt: "desc"

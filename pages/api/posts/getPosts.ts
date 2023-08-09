@@ -16,6 +16,7 @@ export default async function handler(
                 // also get the user info for the post
                 include: {
                     user: true,
+                    hearts: true,
                     Comment: true,
                 },
                 orderBy: {

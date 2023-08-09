@@ -1,4 +1,3 @@
-
 import { useState, useRef } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
@@ -72,7 +71,7 @@ export default function AddComment({ id }: PostProps) {
           value={title}
           type="text"
           name="title"
-          className="p-4 text-lg rounded-md my-2"
+          className="p-4 text-lg rounded-md my-2 break-words"
         />
       </div>
       <div className="flex items-center gap-2">

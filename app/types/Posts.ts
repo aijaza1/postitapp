@@ -20,5 +20,17 @@ export type PostType = {
             image: string
             name: string
         }
-    }[]
+    }[];
+    hearts: {
+        id: string;
+        postId: string;
+        userId: string;
+        heartEmail:  string;
+        user: {
+          email: string;
+          id: string;
+          image: string;
+          name: string;
+        };
+      }[];
 }

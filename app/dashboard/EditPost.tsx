@@ -1,5 +1,5 @@
 "use client";
-
+import { AiFillHeart } from "react-icons/ai";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
@@ -8,6 +8,7 @@ import placeholderImage from "../images/placeholder.png";
 import Toggle from "./toggle";
 import toast from "react-hot-toast";
 import Link from "next/link";
+import { PostType } from "../types/Posts";
 
 type EditProps = {
   id: string;
@@ -19,6 +20,7 @@ type EditProps = {
     postId: string;
     userId: string;
   }[];
+  hearts: PostType["hearts"];
 };
 
 export default function EditPost({
@@ -27,6 +29,7 @@ export default function EditPost({
   title,
   comments,
   id,
+  hearts,
 }: EditProps) {
   const imageUrl = avatar || placeholderImage;
 
@@ -87,6 +90,11 @@ export default function EditPost({
               {comments?.length ?? 0} Comments
             </p>
           </Link>
+
+          <p className="text-sm font-bold flex items-center gap-1 text-gray-700">
+            {hearts.length}
+            <AiFillHeart className="text-2xl" />
+          </p>
 
           <button
             onClick={(e) => {

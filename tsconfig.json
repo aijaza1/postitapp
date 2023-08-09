@@ -30,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     "app/layout.jsx"
-  ],
+, "pages/api/posts/addLike.js"  ],
   "exclude": [
     "node_modules"
   ]
