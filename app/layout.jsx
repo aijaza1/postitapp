@@ -12,23 +12,23 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="shortcut icon" href="/icon.png" />
+        <link rel="shortcut icon" href="/postupyicon.png" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/icon.png"
+          href="/postupyicon.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/icon.png"
+          href="/postupyicon.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/icon.png"
+          href="/postupyicon.png"
         />
 
         <title>Postupy</title>
