@@ -12,13 +12,7 @@ export default async function Nav() {
     <nav className="flex justify-between items-center py-8">
       <Link href={"/"}>
         <div className="w-40 md:w-48">
-          <Image
-            src="/postupy.png"
-            alt="/"
-            layout="responsive"
-            width={180}
-            height={80}
-          />
+          <Image src="/postupy.png" alt="/" width={180} height={80} />
         </div>
       </Link>
 
