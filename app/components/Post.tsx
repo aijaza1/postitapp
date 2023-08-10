@@ -77,7 +77,7 @@ export default function Post({
         {" (" + formatDistanceToNow(parseISO(createdAt)) + " ago)"}
       </p>
 
-      <div className="my-8 text-black font-medium">
+      <div className="my-8 text-black font-normal">
         <p className="break-all">{postTitle}</p>
       </div>
 
