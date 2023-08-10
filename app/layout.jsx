@@ -12,8 +12,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link  rel="icon" type="image/png" href="/icon.png" />
-        
         <link rel="shortcut icon" href="/icon.png" />
         <link
           rel="apple-touch-icon"
