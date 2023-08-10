@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="shortcut icon" href="/icon.png" />
+        <link  rel="icon" type="image/png" href="/icon.png" />
         <title>Postupy</title>
       </head>
       <body className={`mx-4 md:mx-48 xl:mx-96 ${nobile.variable} bg-[#e9e2fb]`}>
