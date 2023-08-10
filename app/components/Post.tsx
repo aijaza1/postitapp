@@ -58,7 +58,7 @@ export default function Post({
   );
 
   return (
-    <div className="bg-white my-8 p-8 rounded-lg">
+    <div className="bg-white mb-6 p-8 rounded-lg">
       <div className="flex items-center gap-2">
         <Image
           className="rounded-full"
@@ -77,7 +77,7 @@ export default function Post({
         {" (" + formatDistanceToNow(parseISO(createdAt)) + " ago)"}
       </p>
 
-      <div className="my-8">
+      <div className="my-8 text-black font-medium">
         <p className="break-all">{postTitle}</p>
       </div>
 
