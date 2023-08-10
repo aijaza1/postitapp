@@ -48,7 +48,7 @@ export default function CreatePost() {
   };
 
   return (
-    <form onSubmit={submitPost} className="bg-white mt-8 mb-12 p-8 rounded-md">
+    <form onSubmit={submitPost} className="bg-white mt-6 mb-12 p-8 rounded-md">
       <div className="flex flex-col my-4">
         <textarea
           onChange={(e) => setTitle(e.target.value)}

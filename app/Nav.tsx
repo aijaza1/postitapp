@@ -11,7 +11,15 @@ export default async function Nav() {
   return (
     <nav className="flex justify-between items-center py-8">
       <Link href={"/"}>
-        <Image src="/postpalnav.png" alt="/" width="170" height="80" />
+        <div className="w-40 md:w-48">
+          <Image
+            src="/postupy.png"
+            alt="/"
+            layout="responsive"
+            width={180}
+            height={80}
+          />
+        </div>
       </Link>
 
       <ul className="flex items-center gap-6">

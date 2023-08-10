@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="shortcut icon" href="/icon.png" />
-        <title>PostPals</title>
+        <title>Postupy</title>
       </head>
       <body className={`mx-4 md:mx-48 xl:mx-96 ${nobile.variable} bg-[#e9e2fb]`}>
         <QueryWrapper>
