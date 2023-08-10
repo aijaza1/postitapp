@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { PostType } from "../../types/Posts";
 import placeholderImage from "../../images/placeholder.png";
+import { format, formatDistanceToNow, parseISO } from "date-fns";
 
 type URL = {
   params: {
@@ -26,7 +27,6 @@ export default function PostDetail(url: URL) {
     queryKey: ["detail-post"],
     queryFn: () => fetchDetails(url.params.slug),
   });
-  console.log("data:", data);
   if (isLoading) return "Loading";
   if (!data) return "Data not available";
 
@@ -41,6 +41,7 @@ export default function PostDetail(url: URL) {
         postTitle={data.title}
         hearts={data.hearts}
         comments={data.Comment ?? []}
+        createdAt={data.createdAt}
       />
       <AddComment id={data?.id} />
       {data.Comment &&
@@ -54,12 +55,21 @@ export default function PostDetail(url: URL) {
                 src={comment.user.image ?? placeholderImage}
                 alt="avatar"
               />
-              <h3 className="font-bold">
+
+              <h3 className="font-bold text-black">
                 {comment?.user?.name ?? "user not found"}
               </h3>
-              <h2 className="text-sm">{comment.createdAt}</h2>
             </div>
-            <div className="py-4">{comment.message}</div>
+
+            <p className="mt-1 text-xs text-black">
+              {format(new Date(comment.createdAt), "MMMM d, yyyy")}
+              {/* Display hours ago */}
+              {" (" +
+                formatDistanceToNow(parseISO(comment.createdAt)) +
+                " ago)"}
+            </p>
+
+            <div className="mt-2 py-4">{comment.message}</div>
           </div>
         ))}
     </div>

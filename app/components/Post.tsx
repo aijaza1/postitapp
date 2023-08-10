@@ -1,4 +1,4 @@
-import { AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
@@ -6,8 +6,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import placeholderImage from "../images/placeholder.png";
 import { PostType } from "../types/Posts";
-import { getServerSession } from "next-auth/next";
 import { useSession } from "next-auth/react";
+import { format, formatDistanceToNow, parseISO } from "date-fns";
 
 interface PostProps {
   avatar: string;
@@ -16,6 +16,7 @@ interface PostProps {
   id: string;
   comments: PostType["Comment"];
   hearts: PostType["hearts"];
+  createdAt: string;
 }
 
 export default function Post({
@@ -25,16 +26,12 @@ export default function Post({
   id,
   comments,
   hearts,
+  createdAt,
 }: PostProps) {
   const imageUrl = avatar ?? placeholderImage;
-
   const queryClient = useQueryClient();
   const [liked, setLiked] = useState(false);
-
   const session = useSession(); // Use useSession hook to get the session information
-
-  console.log("session:", session);
-  console.log("hearts:", hearts);
 
   useEffect(() => {
     if (session.data?.user?.email) {
@@ -71,8 +68,15 @@ export default function Post({
           alt="avatar"
         />
 
-        <h3 className="font-bold text-gray-700">{name}</h3>
+        <h3 className="font-bold text-black text-lg">{name}</h3>
       </div>
+
+      <p className="mt-1 text-xs text-black">
+        {format(new Date(createdAt), "MMMM d, yyyy")}
+        {/* Display hours ago */}
+        {" (" + formatDistanceToNow(parseISO(createdAt)) + " ago)"}
+      </p>
+
       <div className="my-8">
         <p className="break-all">{postTitle}</p>
       </div>
@@ -91,7 +95,11 @@ export default function Post({
           }`}
         >
           {hearts.length}
-          <AiFillHeart className="text-2xl" />
+          {liked ? (
+            <AiFillHeart className="text-2xl" />
+          ) : (
+            <AiOutlineHeart className="text-2xl" />
+          )}
         </p>
       </div>
     </div>

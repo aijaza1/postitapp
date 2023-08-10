@@ -33,6 +33,7 @@ export default function Home() {
           postTitle={post.title}
           id={post.id}
           hearts={post.hearts}
+          createdAt={post.createdAt}
         />
       ))}
     </main>

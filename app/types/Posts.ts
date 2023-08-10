@@ -1,7 +1,7 @@
 export type PostType = {
     title: string
     id: string
-    createdAt?: string
+    createdAt: string
     user: {
         email: string
         id: string
