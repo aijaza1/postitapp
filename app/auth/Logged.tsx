@@ -15,7 +15,7 @@ export default function Logged({ image }: User) {
   return (
     <li className="flex gap-4 items-center">
       <button
-        className="bg-gray-700 text-white text-sm px-6 md:px-8 py-2 rounded-md whitespace-nowrap "
+        className="bg-gray-700 text-white text-sm px-6 py-2 rounded-md whitespace-nowrap "
         onClick={() => signOut()}
       >
         Sign Out
