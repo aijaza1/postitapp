@@ -14,7 +14,7 @@ export default async function handler(
         if (!session)
             return res.status(401).json({ message: "Please sign in" })
 
-        // delete a post
+        // delete a post from db
         try {
             const postId = req.body
             const result = await prisma.post.delete({
